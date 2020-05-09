@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block extraHeadData %}
+<link rel="stylesheet" href="{{url_for('static',filename="style.css")}}">
+<script src="{{url_for('static',filename="index.js")}}"></script>
+<script src="{{url_for('static',filename="socketio.js")}}"></script>
+<script src="{{url_for('static',filename="handlebars.js")}}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <form id="send-user-form">
+        <input type="text" name="username" id="username">
+        <button id="send_username">Login</button> 
+    </form>
+    <button id="reconnect" class="d-none">Reconnect</button>
+    <p id="your-name">  
+        {{name}} 
+    </p>
+    <p id="partnerName">
+        {% if partnerName %}
+            Your friend is: {{partnerName}}
+        {% elif name %}
+            Waiting for friend...
+        {% endif %}
+    </p>
+</div>
+<div class="section-1-container section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
+                <div class="center">
+                    <form action="" method="" id="form">
+                        <textarea name="input-text" maxlength="50" id="text" cols="50" rows="2"></textarea>
+                        <button type="submit" disabled id="submit">Submit</button>         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="container">
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2  d-flex justify-content-center align-items-center">
+                <div id="turn"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
+                <div class="center">
+                    <div id="text-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

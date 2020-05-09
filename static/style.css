@@ -1,0 +1,19 @@
+.div-wrapper {
+    height: 200px;
+    margin-top: 10px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+}
+ 
+.center {
+    width: 75%;
+    padding: 40px 20px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.error-input {
+    border: 2px red solid
+}
